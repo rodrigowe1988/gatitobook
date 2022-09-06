@@ -5,10 +5,11 @@ import { HomeRoutingModule } from './home-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { MensagemModule } from '../components/mensagem/mensagem.module';
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent],
-  imports: [CommonModule, HomeRoutingModule, FormsModule],
+  imports: [CommonModule, HomeRoutingModule, FormsModule, MensagemModule],
   exports: [HomeComponent],
 })
 export class HomeModule {}
