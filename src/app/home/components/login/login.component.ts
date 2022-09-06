@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
 
 @Component({
@@ -10,14 +12,17 @@ export class LoginComponent implements OnInit {
   usuario: string = '';
   senha: string = '';
 
-  constructor(private authService: AutenticacaoService) {}
+  constructor(
+    private authService: AutenticacaoService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
-  login() {
+  login(): void {
     this.authService.autenticar(this.usuario, this.senha).subscribe(
       () => {
-        console.log('Autenticado com sucesso...');
+        this.router.navigate(['animais']);
       },
       (error: any) => {
         alert('usuário não identificado');
