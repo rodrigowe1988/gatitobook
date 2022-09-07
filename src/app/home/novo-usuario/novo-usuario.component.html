@@ -52,6 +52,7 @@
     "
     mensagem="Nome de usuário(a) obrigatório"
   ></app-mensagem>
+  <app-mensagem *ngIf="novoUsuarioForm.get('userName')?.errors?.['usuarioExistente']" mensagem="Nome de usuário(a) já existe"></app-mensagem>
   </div>
   <div class="form-group">
     <input
