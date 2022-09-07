@@ -4,7 +4,7 @@ import { NovoUsuarioService } from './novo-usuario.service';
 import { NovoUsuario } from './novo-usuario';
 import { minusculoValidator } from './minusculo.validator';
 import { UsuarioExisteService } from './usuario-existe.service';
-
+import { usuarioSenhaIguaisValidator } from './usuario-senha-iguais.validator';
 @Component({
   selector: 'app-novo-usuario',
   templateUrl: './novo-usuario.component.html',
@@ -30,10 +30,10 @@ export class NovoUsuarioComponent implements OnInit {
           [this.usuarioExistenteService.usuarioJaExiste()],
         ],
         password: [''],
+      },
+      {
+        validators: [usuarioSenhaIguaisValidator],
       }
-      // {
-      //   validators: [usuarioSenhaIguaiValidator],
-      // }
     );
   }
 
