@@ -14,3 +14,12 @@ ng serve
 ```
 
 Não se esqueça de instalar a pasta ***node_modules*** em ambas as pastas para que possa rodar o projeto corretamente.
+
+```
+npm install
+```
+
+ou 
+```
+yarn
+```
